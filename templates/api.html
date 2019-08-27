@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book</title>
+    <link rel="stylesheet" href="/static/css/css.css">
+    <script src="/static/js/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="/static/js/highlight/styles/default.css">
+    <script src="/static/js/highlight/highlight.pack.js"></script>
+    <style>
+        .page img {
+            max-width: 600px;
+        }
+        .img-mask {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(128, 128, 128, 0.57);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            text-align: center;
+        }
+
+        .img-mask img {
+            width: 85%;
+            height: 85%;
+            min-width: 800px;
+            margin-top: 50px;
+        }
+
+        label {
+            height: 30px;
+            border-radius: 3px;
+            background-color: orange;
+            color: white;
+            padding: 2px 5px;
+            font-size: 10px;
+        }
+
+        li code {
+            color: #d23333;
+        }
+
+        tr, td {
+            border: 1px solid grey;
+        }
+
+        tr, th {
+            border: 1px solid grey;
+        }
+
+        tr>td {
+            padding: 2px 5px;
+        }
+
+        tr>td em {
+            color: #d23333;
+        }
+
+        body {
+            font-family: "Open Sans","Clear Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="book">
+        <!--侧边栏-->
+        <div class="book-summary">
+            <div class="searchbox" style="height: 0;overflow: hidden">
+                <input type="text" placeholder="搜索...">
+            </div>
+            <div class="custom-link">贝宝机器人开发文档 <label>插件化</label></div>
+            <div class="nav">
+                <ul>
+                    {% for nav in nav_list %}
+                        <li><a href="{% url 'apidoc' nav.path %}">{{ nav.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <!--正文-->
+        <div class="book-body">
+            <div class="book-header">
+                <a href="#"><i class="icon-list"></i></a>
+                <a href="#"><i class="icon-search"></i></a>
+            </div>
+            <div class="page">
+                <h3 class="title">{{ info.title }}</h3>
+                <div class="content">{{ info.article | safe}}</div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="img-mask" style="display: none">
+        <img src="" alt="">
+        <div class="img-mask-show"></div>
+    </div>
+    <script src="/static/js/js.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+        $(document).ready(function (e) {
+            $(".page img").click(function (e) {
+                console.log(e.target);
+                var img_src = e.target.src;
+                $(".img-mask").css({"display": "block"});
+                $(".img-mask img").attr("src", img_src);
+            });
+
+            $(".img-mask").click(function (e) {
+                $(".img-mask").css({"display": "none"})
+            });
+        });
+    </script>
+</body>
+</html>

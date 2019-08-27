@@ -1,0 +1,76 @@
+{% extends "admin/base_site.html" %}
+
+{% block extrastyle %}
+{% endblock %}
+
+{% block content %}
+    <!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery UI 折叠面板（Accordion） - 默认功能</title>
+  <script src="/static/js/jquery.js"></script>
+  <script src="/static/js/zui.min.js"></script>
+  <script>
+  $(function() {
+  });
+  </script>
+</head>
+<body>
+
+    <div class="results">
+        <table id="result_list" class="table table-striped table-bordered table-hover table-condensed">
+            <thead>
+            <tr>
+                <th scope="col" class="action-checkbox-column">
+
+                    <div class="text"><span><input type="checkbox" id="action-toggle" style="display: inline-block;"></span>
+                    </div>
+                </th>
+                <th scope="col" class="sortable">
+                    <div class="text">
+                        <a href="#">群组名</a>
+                    </div>
+                </th>
+                <th scope="col" class="sortable ">
+                    <div class="text">
+                        <a href="#">群组id</a>
+                    </div>
+                </th>
+                <th scope="col" class="sortablez">
+                    <div class="text">
+                        <a href="#">操作</a>
+                    </div>
+                </th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr class="">
+                <td class="actioan-checkbox">
+                    <input type="checkbox" name="_selected_action" value="20" class="action-select">
+                </td>
+                <td>asdad</td>
+                <td>asdasd</td>
+                <td class="show-users">asdad</td>
+
+                <td class="data">
+                    asdadsda
+                </td>
+
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        $('.data').collapse({
+           toggle: false
+        });
+    </script>
+</body>
+</html>
+{% endblock %}
+
+{% block extrajs %}
+{% endblock %}

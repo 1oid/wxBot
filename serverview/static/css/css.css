@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body, .book {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    opacity: 0;
+}
+
+
+.book-summary {
+    width: 300px;
+    height: 100%;
+    background: #fafafa;
+    font-family: "Open Sans","Clear Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    border-right: 1px solid #e8e8e8;
+    overflow-y: scroll;
+}
+
+.custom-link {
+    height: 40px;
+    font-size: 14px;
+    border-bottom: 1px solid #eeeeee;
+    line-height: 40px;
+
+}
+
+.book-summary .nav, .custom-link, .searchbox {
+    margin-left: 20px;
+}
+
+.searchbox input {
+    width: 95%;
+    background: #fafafa;
+    border: 1px solid #fafafa;
+    padding: 7px 4px;
+    font-size: 100%;
+}
+
+li>ul {
+    margin-left: 20px;
+}
+
+.book-summary .nav ul {
+    list-style: none;
+}
+
+.book-summary .nav ul li {
+    line-height: 40px;
+    margin: 7px 0;
+    font-size: 14px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+b {
+    margin-right: 2px;
+}
+
+a:hover, a:active {
+    text-decoration: none;
+    color: #008cff;
+}
+
+.book-body {
+    /*background-color: blue;*/
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 300px;
+}
+
+.book-header {
+    height: 50px;
+    /*background-color: sandybrown;*/
+}
+
+.page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 0 40px 25px;
+    font-family: "Open Sans","Clear Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    /*background-color: greenyellow;*/
+}
+
+.page p {
+    line-height: 1.6;
+    word-wrap: break-word;
+    margin-top: 10px;
+}
+
+.icon-list, .icon-search {
+    margin-top: 16px;
+    margin-left: 16px;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+}
+
+.icon-list {
+    background-image: url("../images/list.png");
+}
+
+.icon-search {
+    background-image: url("../images/search.png");
+}
+
+.page .title {
+    font-size: 2em;
+    margin-top: 10px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+/*book-body内容markdown->html*/
+.page .content {
+    /*font-family: "Menlo", "Meslo LG", monospace;*/
+}
+
+.page .content a {
+    text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #0099cc;
+    font-size: 1.5em;
+    font-weight: bold;
+    border-bottom: 1px solid #eeeeee;
+    margin-bottom: 16px;
+    margin-top: 1em;
+}
+
+blockquote p {
+    min-height: 30px;
+    border-left: 3px solid darkgrey;
+    padding-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 16px;
+    line-height: 30px;
+    color: #9f9f9f;
+}
+
+code {
+    margin: 0;
+    background-color: #f7f7f7;
+    border-radius: 3px;
+}
+
+.content ul li {
+    line-height: 1.6;
+}
+

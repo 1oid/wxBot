@@ -1,0 +1,18 @@
+[
+    {
+        "title": "简介",
+        "path": "wxbot_introduction"
+    },
+    {
+        "title": "机器人配置",
+        "path": "wxbot_configure"
+    },
+    {
+        "title": "插件开发规范",
+        "path": "extension_dev_doc"
+    },
+    {
+        "title": "插件开发API",
+        "path": "web_dev_api"
+    }
+]
